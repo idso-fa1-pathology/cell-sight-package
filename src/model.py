@@ -1,5 +1,16 @@
 import os
+import requests
 from ultralytics import YOLO
+
+def download_weights(url, output_path):
+    if not os.path.exists(output_path):
+        response = requests.get(url, stream=True)
+        with open(output_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+        print(f'Weights downloaded to {output_path}')
+    else:
+        print('Weights already downloaded.')
 
 def load_model(model_path):
     return YOLO(model_path)
@@ -8,7 +19,14 @@ def train_model(config_path):
     os.system(f'yolo train model=yolov8x.pt data={config_path} epochs=50 imgsz=640')
 
 def run_inference(images_directory):
-    model = load_model('runs/dataset-val-2000/weights/best.pt')
+    weights_path = 'runs/dataset-val-2000/weights/best.pt'
+    weights_url = 'https://huggingface.co/YasinShokrollahi/cell-detection/resolve/main/best.pt?download=true'
+
+    # Ensure the weights directory exists
+    os.makedirs(os.path.dirname(weights_path), exist_ok=True)
+    download_weights(weights_url, weights_path)
+
+    model = load_model(weights_path)
     counter = 0
 
     for file_name in os.listdir(images_directory):
