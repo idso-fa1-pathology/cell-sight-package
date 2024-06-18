@@ -5,8 +5,8 @@
 First, clone the repository and install the necessary dependencies.
 
 ```bash
-git clone https://github.com/idso-fa1-pathology/cell-detection-package.git
-cd cell-detection-package
+git clone https://github.com/idso-fa1-pathology/cell-sight-package.git
+cd cell-sight-package
 pip install -r requirements.txt
 ```
 
