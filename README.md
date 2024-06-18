@@ -1,3 +1,17 @@
+# cell-detection-pack
+
+## Installation
+
+First, clone the repository and install the necessary dependencies.
+
+```bash
+git clone https://github.com/idso-fa1-pathology/cell-detection-pack.git
+cd cell-detection-pack
+pip install -r requirements.txt
+
+
+
+
 ## Usage
 
 ### Predict New Images
