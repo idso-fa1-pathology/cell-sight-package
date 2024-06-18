@@ -1,4 +1,4 @@
-# cell-detection-pack
+# cell-detection-package
 
 ## Installation
 
