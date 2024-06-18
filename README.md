@@ -17,6 +17,11 @@ pip install -r requirements.txt
 ### Predict New Images
 To predict new images using the pre-trained model, follow these steps:
 
+Download Pre-trained Model:
+
+The pre-trained model weights will be automatically downloaded and saved in the runs/pretrained-model/weights directory when you run the prediction script.
+
+
 1. Upload your images to the `data/predict/images/` directory.
 
 2. Run the prediction script with the following command:

@@ -22,6 +22,6 @@ def predict_new_images(images_directory, weights_url, weights_path):
 if __name__ == '__main__':
     images_directory = 'data/predict/images/'
     weights_url = 'https://huggingface.co/YasinShokrollahi/cell-detection/resolve/main/best.pt?download=true'
-    weights_path = 'runs/dataset-val-2000/weights/best.pt'
+    weights_path = 'runs/pretrained-model/weights/best.pt'
     
     predict_new_images(images_directory, weights_url, weights_path)
