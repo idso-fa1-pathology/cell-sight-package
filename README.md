@@ -52,3 +52,25 @@ Your dataset should be organized into three main folders: `train`, `test`, and `
     0 0.527016 0.342674 0.0800738 0.0796084
     ```
     All input images should be resized to 640x640 pixels.
+
+
+
+  
+## Running with Docker
+
+To run the `cell-sight-package` Docker image, follow these steps:
+
+1. **Pull the Docker image**:
+
+   ```bash
+   docker pull yshokrolllahi/cell-sight-package:latest
+   ```
+
+2. **Run the Docker container**:
+
+   ```bash
+   docker run -it --rm yshokrolllahi/cell-sight-package:latest
+   ```
+
+This will start the container and run your application as defined in the Dockerfile.
+
