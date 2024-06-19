@@ -79,10 +79,10 @@ This will start the container and run your application as defined in the Dockerf
 1. **Pull the Docker image**:
 
    ```bash
-docker pull ghcr.io/idso-fa1-pathology/cell-sight-package:latest
+    docker pull ghcr.io/idso-fa1-pathology/cell-sight-package:latest
    ```
 
-1. **Run the Docker container:**:
+2. **Run the Docker container:**:
 
 
    ```bash
