@@ -74,3 +74,22 @@ To run the `cell-sight-package` Docker image, follow these steps:
 
 This will start the container and run your application as defined in the Dockerfile.
 
+## From GitHub Packages
+
+1. **Pull the Docker image**:
+
+   ```bash
+docker pull ghcr.io/idso-fa1-pathology/cell-sight-package:latest
+   ```
+
+1. **Run the Docker container:**:
+
+
+   ```bash
+    docker run -it --rm ghcr.io/idso-fa1-pathology/cell-sight-package:latest
+   ```
+
+
+This will start the container and run your application as defined in the Dockerfile.
+
+
