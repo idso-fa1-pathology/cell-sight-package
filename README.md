@@ -1,9 +1,5 @@
 # cell-detection-package
 
-![Contributors](https://img.shields.io/github/contributors/<username>/<repository>)
-![Last Commit](https://img.shields.io/github/last-commit/<username>/<repository>)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/<username>/<repository>)
-
 
 ##Idea 
 
