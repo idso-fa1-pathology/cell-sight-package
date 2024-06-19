@@ -1,6 +1,12 @@
 # cell-detection-package
 
+##Idea 
+
+The cell-detection-package is a Python package designed for detecting and segmenting cells in histology images. This package leverages deep learning models to provide accurate and efficient cell detection, facilitating research and analysis in pathology.
+
 ## Installation
+
+
 
 First, clone the repository and install the necessary dependencies.
 
