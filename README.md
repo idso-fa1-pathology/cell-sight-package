@@ -6,7 +6,7 @@ The cell-detection-package is a Python package designed for detecting and segmen
 any images size
 ## Installation
 
-
+whole slide images detection is last update and results will shows in same folder of predicted image
 
 First, clone the repository and install the necessary dependencies.
 
