@@ -58,7 +58,10 @@ def train_model(config_path, model_path='yolov8x.pt', epochs=50, imgsz=640, pati
     print(f"Contents of {train_images_dir}: {os.listdir(train_images_dir)}")
     print(f"Contents of {val_images_dir}: {os.listdir(val_images_dir)}")
     
-    command = f'yolo train model={model_path} data={temp_config_path} epochs={epochs} imgsz={imgsz} patience={patience} project={output_dir} name=experiment'
+    # Replace invalid characters in project name
+    valid_project_name = output_dir.replace('/', '_')
+    
+    command = f'yolo train model={model_path} data={temp_config_path} epochs={epochs} imgsz={imgsz} patience={patience} project={valid_project_name} name=experiment'
     print(f"Executing command: {command}")
     os.system(command)
     
