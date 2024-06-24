@@ -1,0 +1,10 @@
+path: .  # This path will be updated dynamically in the script
+train: train/images
+val: valid/images
+test: test/images
+
+# Classes
+names:
+  0: cd45
+  1: panCK
+  2: Others

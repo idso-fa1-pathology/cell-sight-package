@@ -1,12 +1,17 @@
-from model import load_model, train_model, run_inference
+import os
+import sys
+
+# Add the project root directory to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
+from model import run_inference
 
 def main():
-    # Example usage
-    # Train model
-    train_model(config_path='src/config/config.yaml')
-
-    # Run inference
-    run_inference(images_directory='data/raw/')
+    print("Starting inference...")
+    images_directory = 'data/predict/images/'
+    weights_path = 'runs/trained/experiment/weights/best.pt'  # Path to your trained model weights
+    run_inference(images_directory=images_directory, weights_path=weights_path)
+    print("Inference completed.")
 
 if __name__ == '__main__':
     main()
