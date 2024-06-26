@@ -9,12 +9,10 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install Flask  # Ensure Flask is installed
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Expose port 5000 for the Flask app
+EXPOSE 5000
 
-# Define environment variable
-ENV NAME World
-
-# Run the application
-CMD ["python", "scripts/predict.py", "--images_directory", "data/predict/images/", "--output_directory", "runs/predict/"]
+# Run the Flask application
+CMD ["python", "backend/app.py"]

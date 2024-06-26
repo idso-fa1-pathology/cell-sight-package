@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Detection Interface</title>
+</head>
+<body>
+    <h1>Cell Detection Interface</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <label for="images">Upload Images:</label>
+        <input type="file" id="images" name="images" multiple required>
+        <button type="submit">Upload and Predict</button>
+    </form>
+    <div id="results"></div>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const files = document.getElementById('images').files;
+            for (let i = 0; i < files.length; i++) {
+                formData.append('images', files[i]);
+            }
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Display results
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = `<p>${JSON.stringify(data)}</p>`;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
