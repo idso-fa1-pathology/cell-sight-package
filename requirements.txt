@@ -2,3 +2,4 @@ ultralytics
 numpy
 opencv-python
 torch
+flask

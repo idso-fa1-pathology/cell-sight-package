@@ -9,7 +9,6 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install Flask  # Ensure Flask is installed
 
 # Expose port 5000 for the Flask app
 EXPOSE 5000
