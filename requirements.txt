@@ -3,3 +3,9 @@ numpy
 opencv-python
 torch
 flask
+torch
+opencv-python-headless
+werkzeug
+requests
+werkzeug
+pyyaml
