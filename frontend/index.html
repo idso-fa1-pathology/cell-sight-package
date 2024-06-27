@@ -6,7 +6,7 @@
     <title>Cell Detection Interface</title>
 </head>
 <body>
-    <h1>Cell Detection Interface</h1>
+    <h1>Cell Detection Interface v1.1.3</h1>
     <form id="upload-form" enctype="multipart/form-data">
         <label for="images">Upload Images:</label>
         <input type="file" id="images" name="images" multiple required>
@@ -27,10 +27,20 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
-                // Display results
                 const resultsDiv = document.getElementById('results');
-                resultsDiv.innerHTML = `<p>${JSON.stringify(data)}</p>`;
+                resultsDiv.innerHTML = ''; // Clear previous results
+                data.results.forEach(result => {
+                    const img = document.createElement('img');
+                    img.src = result.output_path; // Adjust the path if necessary
+                    img.alt = result.file_name;
+                    img.width = 200; // Adjust the size as needed
+                    
+                    const resultText = document.createElement('p');
+                    resultText.innerText = `File: ${result.file_name}, Prediction saved at: ${result.output_path}`;
+                    
+                    resultsDiv.appendChild(img);
+                    resultsDiv.appendChild(resultText);
+                });
             })
             .catch((error) => {
                 console.error('Error:', error);
