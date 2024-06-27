@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Detection Interface</title>
+</head>
+<body>
+    <h1>Cell Detection Interface</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <label for="images">Upload Images:</label>
+        <input type="file" id="images" name="images" multiple required>
+        <button type="submit">Upload and Predict</button>
+    </form>
+    <div id="results"></div>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const files = document.getElementById('images').files;
+            for (let i = 0; i < files.length; i++) {
+                formData.append('images', files[i]);
+            }
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = ''; // Clear previous results
+                if (data.error) {
+                    resultsDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+                } else {
+                    data.results.forEach(result => {
+                        const img = document.createElement('img');
+                        img.src = result.output_path; // Adjust the path if necessary
+                        img.alt = result.file_name;
+                        img.width = 200; // Adjust the size as needed
+                        
+                        const resultText = document.createElement('p');
+                        resultText.innerText = `File: ${result.file_name}, Prediction saved at: ${result.output_path}`;
+                        
+                        resultsDiv.appendChild(img);
+                        resultsDiv.appendChild(resultText);
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

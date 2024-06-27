@@ -15,6 +15,21 @@ cd cell-sight-package
 pip install -r requirements.txt
 ```
 
+### Ensure YOLO Command is Available
+
+After installing the dependencies, you need to ensure the `yolo` command is available in your PATH. This can be done by adding the installation path to your PATH environment variable.
+
+```bash
+export PATH=$PATH:~/.local/bin
+```
+
+To make this change permanent, add the above export command to your `~/.bashrc` or `~/.profile` file:
+
+```bash
+echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## Usage
 
 ### Predict New Images

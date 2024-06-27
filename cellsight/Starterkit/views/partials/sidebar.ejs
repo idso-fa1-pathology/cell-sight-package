@@ -1,0 +1,91 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+
+  <div data-simplebar class="h-100">
+
+    <!--- Sidemenu -->
+    <div id="sidebar-menu">
+      <!-- Left Menu Start -->
+      <ul class="metismenu list-unstyled" id="side-menu">
+        <li class="menu-title" data-key="t-menu"><%=translation.t_menu %></li>
+
+        <li>
+          <a href="/index">
+            <i data-feather="home"></i>
+            <span data-key="t-dashboard"><%=translation.t_dashboard %></span>
+          </a>
+        </li>
+
+       
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow">
+            <i data-feather="users"></i>
+            <span data-key="t-authentication"><%=translation.t_authentication %></span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="/auth-login" data-key="t-login"><%=translation.t_login %></a></li>
+            <li><a href="/auth-register" data-key="t-register"><%=translation.t_register %></a></li>
+            <li><a href="/auth-recoverpw" data-key="t-recover-password"><%=translation.t_recover_password %></a></li>
+            <li><a href="/auth-lock-screen" data-key="t-lock-screen"><%=translation.t_lock_screen %></a></li>
+            <li><a href="/auth-logout" data-key="t-logout"><%=translation.t_logout %></a></li>
+            <li><a href="/auth-confirm-mail" data-key="t-confirm-mail"><%=translation.t_confirm_mail %></a></li>
+            <li><a href="/auth-email-verification" data-key="t-email-verification"><%=translation.t_email_verification %></a></li>
+            <li><a href="/auth-two-step-verification" data-key="t-two-step-verification"><%=translation.t_two_step_verification %></a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow">
+            <i data-feather="file-text"></i>
+            <span data-key="t-pages"><%=translation.t_pages %></span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="/pages-maintenance" data-key="t-maintenance"><%=translation.t_maintenance %></a></li>
+            <li><a href="/pages-comingsoon" data-key="t-coming-soon"><%=translation.t_coming_soon %></a></li>
+            <li><a href="/pages-404" data-key="t-error-404"><%=translation.t_error_404 %></a></li>
+            <li><a href="/pages-500" data-key="t-error-500"><%=translation.t_error_500 %></a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="/layouts-horizontal">
+            <i data-feather="layout"></i>
+            <span data-key="t-horizontal"><%=translation.t_horizontal %></span>
+          </a>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow">
+            <i data-feather="share-2"></i>
+            <span data-key="t-multi-level"><%=translation.t_multi_level %></span>
+          </a>
+          <ul class="sub-menu" aria-expanded="true">
+            <li><a href="javascript: void(0);" data-key="t-level-1-1"><%=translation.t_level_1_1 %></a></li>
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" data-key="t-level-1-2"><%=translation.t_level_1_2 %></a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li><a href="javascript: void(0);" data-key="t-level-2-1"><%=translation.t_level_2_1 %></a></li>
+                <li><a href="javascript: void(0);" data-key="t-level-2-2"><%=translation.t_level_2_2 %></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <div class="card sidebar-alert border-0 text-center mx-4 mb-0 mt-5">
+        <div class="card-body">
+          <img src="assets/images/giftbox.png" alt="">
+          <div class="mt-4">
+            <h5 class="alertcard-title font-size-16">Unlimited Access</h5>
+            <p class="font-size-13">Upgrade your plan from a Free trial, to select ‘Business Plan’.</p>
+            <a href="#!" class="btn btn-primary mt-2">Upgrade Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+  </div>
+</div>
+<!-- Left Sidebar End -->
