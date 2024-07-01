@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body expands to at least the height of the viewport */
+}
+
+header, footer {
+    background-color: #1E2A38;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #1E2A38;
+    color: white;
+    text-align: center;
+}
+
+
+footer a {
+    color: #00A4EF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    flex: 1; /* This ensures the main content area takes up remaining vertical space */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-left {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.menu-left li {
+    margin-right: 20px;
+}
+
+.menu-left li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-left li a:hover {
+    text-decoration: underline;
+}
+
+.site-title {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.upload-container {
+    display: flex;
+    justify-content: center; /* Centers the boxes within the container */
+    flex-wrap: wrap;
+    margin: 20px auto;
+    width: 70%; /* Adjust this to make the entire container narrower or wider */
+    gap: 1%; /* Minimal space between the boxes */
+}
+
+.upload-box, .model-setup-box {
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 49%; /* Each box now takes up 49% of the container width */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.upload-box:hover, .model-setup-box:hover {
+    border-color: #007BFF;
+}
+
+
+.upload-icon {
+    font-size: 50px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.upload-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.upload-guidelines {
+    color: #888;
+    font-size: 14px;
+}
+
+#image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 10px;
+}
+
+.model-setup-box {
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 20%;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.model-setup-box:hover {
+    border-color: #007BFF;
+}
+
+.model-setup-box h3 {
+    margin-bottom: 20px;
+}
+
+.model-setup-box label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.model-setup-box input, .model-setup-box select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#predict-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: calc(49% - 40px); /* Match width of the upload box minus padding */
+}
+
+
+#predict-button:hover {
+    background-color: #0056b3;
+}
+
+.loading-bar {
+    width: calc(49% - 40px); /* Match width of the upload box minus padding */
+    height: 10px;
+    background-color: #007BFF;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.loading-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0056b3;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+#results {
+    text-align: center;
+}
+/* New styles for product boxes */
+.products {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.product {
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%; /* Adjust the width of each product box */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    transition: all 0.3s ease;
+}
+
+.product:hover {
+    border-color: #007BFF;
+    transform: translateY(-5px); /* Example: Lift the box slightly on hover */
+}
+
+.product h3 {
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.product a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.product a:hover {
+    background-color: #0056b3;
+}
