@@ -4,52 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cell Detection Interface</title>
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
-    <h1>Cell Detection Interface</h1>
-    <form id="upload-form" enctype="multipart/form-data">
-        <label for="images">Upload Images:</label>
-        <input type="file" id="images" name="images" multiple required>
-        <button type="submit">Upload and Predict</button>
-    </form>
-    <div id="results"></div>
-    <script>
-        document.getElementById('upload-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData();
-            const files = document.getElementById('images').files;
-            for (let i = 0; i < files.length; i++) {
-                formData.append('images', files[i]);
-            }
-            fetch('/predict', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                const resultsDiv = document.getElementById('results');
-                resultsDiv.innerHTML = ''; // Clear previous results
-                if (data.error) {
-                    resultsDiv.innerHTML = `<p>Error: ${data.error}</p>`;
-                } else {
-                    data.results.forEach(result => {
-                        const img = document.createElement('img');
-                        img.src = result.output_path; // Adjust the path if necessary
-                        img.alt = result.file_name;
-                        img.width = 200; // Adjust the size as needed
-                        
-                        const resultText = document.createElement('p');
-                        resultText.innerText = `File: ${result.file_name}, Prediction saved at: ${result.output_path}`;
-                        
-                        resultsDiv.appendChild(img);
-                        resultsDiv.appendChild(resultText);
-                    });
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
+    <div id="header-placeholder"></div>
+    <main>
+        <h2>Welcome to the Cell Sight Application</h2>
+        
+        <section class="products">
+            <div class="product">
+                <h3>Cell Segmentation</h3>
+                <p>Automated segmentation of cells in images.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="product">
+                <h3>Cell Detection</h3>
+                <p>Detect specific types of cells in images.</p>
+                <a href="upload.html">Learn More</a>
+            </div>
+            <div class="product">
+                <h3>Whole Slide Image Prediction</h3>
+                <p>Predict attributes from whole slide pathology images.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="static/js/includeHeader.js"></script>
 </body>
 </html>

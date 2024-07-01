@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+        <h2>Upload Images</h2>
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="upload-container">
+                <div class="model-setup-box">
+                    <h3>Model Setup</h3>
+                    <label for="model-name">Model Name:</label>
+                    <input type="text" id="model-name" name="model-name" value="YOLOV8s">
+                    
+                    <label for="confidence-rate">Confidence Rate:</label>
+                    <input type="number" id="confidence-rate" name="confidence-rate" value="0.9" min="0" max="1" step="0.01" required>
+                    
+                    <label for="annotation-shape">Annotation Shape:</label>
+                    <select id="annotation-shape" name="annotation-shape" required>
+                        <option value="box">Dot</option>
+                        <option value="points">Box</option>
+                    </select>
+                    
+                    <label for="cd45-color">CD45 Color:</label>
+                    <input type="color" id="cd45-color" name="cd45-color" value="#00ff00" required>
+                    
+                    <label for="panck-color">PanCK Color:</label>
+                    <input type="color" id="panck-color" name="panck-color" value="#0000ff" required>
+
+                    <label for="cells-color">Other Cells:</label>
+                    <input type="color" id="cells-color" name="cells-color" value="#ff0000" required>
+                </div>
+                <div class="upload-box" onclick="document.getElementById('images').click();">
+                    <i class="fas fa-upload upload-icon"></i>
+                    <p>Drag & drop your images here or click to upload</p>
+                    <p class="upload-guidelines">Max size: 640 x 640 px</p>
+                    <input type="file" id="images" name="images" multiple required style="display: none;">
+                    <div id="image-preview"></div>
+                </div>
+            </div>
+        </form>
+        <button id="predict-button" style="display: none;">Predict</button>
+        <div id="loading-bar" style="display: none;" class="loading-bar"></div>
+        <div id="results"></div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="static/js/includeHeader.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 
 # cell-detection-package
 
+#need to use better frontend
+
 ## Goal
 #Goal
 The cell-detection-package is a Python package designed for detecting and segmenting cells in histology images. This package leverages deep learning models to provide accurate and efficient cell detection, facilitating research and analysis in pathology. It supports images of any size, including whole slide images.
@@ -112,6 +114,9 @@ This will start the container and run your application as defined in the Dockerf
 
    ```bash
     docker run -it --rm ghcr.io/idso-fa1-pathology/cell-sight-package:latest
+
+   docker run -p 5001:5001 -v /Users/yshokrollahi/Documents/GitHub/cell-sight-package/backend:/app/backend -v /Users/yshokrollahi/Documents/GitHub/cell-sight-package/frontend:/app/frontend cell-sight-package:latest
+
    ```
 
 This will start the container and run your application as defined in the Dockerfile.
