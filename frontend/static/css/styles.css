@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -25,7 +26,6 @@ footer {
     color: white;
     text-align: center;
 }
-
 
 footer a {
     color: #00A4EF;
@@ -82,6 +82,23 @@ h2 {
     text-align: center;
 }
 
+.title-with-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-with-icon h2 {
+    display: flex;
+    align-items: center;
+}
+
+.title-with-icon h2 i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
 .upload-container {
     display: flex;
     justify-content: center; /* Centers the boxes within the container */
@@ -105,7 +122,6 @@ h2 {
 .upload-box:hover, .model-setup-box:hover {
     border-color: #007BFF;
 }
-
 
 .upload-icon {
     font-size: 50px;
@@ -177,7 +193,6 @@ h2 {
     width: calc(49% - 40px); /* Match width of the upload box minus padding */
 }
 
-
 #predict-button:hover {
     background-color: #0056b3;
 }
@@ -215,6 +230,7 @@ h2 {
 #results {
     text-align: center;
 }
+
 /* New styles for product boxes */
 .products {
     display: flex;
