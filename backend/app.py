@@ -20,8 +20,8 @@ def serve_frontend():
 def favicon():
     return app.send_static_file('favicon.ico')
 
-# Route to serve uploaded files
-@app.route('/uploads/<filename>')
+# Route to serve uploaded files from nested directories
+@app.route('/uploads/<path:filename>')
 def uploaded_file(filename):
     # Construct the full file path
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
