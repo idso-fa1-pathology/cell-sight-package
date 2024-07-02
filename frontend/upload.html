@@ -23,18 +23,18 @@
                     
                     <label for="annotation-shape">Annotation Shape:</label>
                     <select id="annotation-shape" name="annotation-shape" required>
-                        <option value="box">Dot</option>
-                        <option value="points">Box</option>
+                        <option value="dot">Dot</option>
+                        <option value="box">Box</option>
                     </select>
                     
                     <label for="cd45-color">CD45 Color:</label>
-                    <input type="color" id="cd45-color" name="cd45-color" value="#00ff00" required>
+                    <input type="color" id="cd45-color" name="cd45-color" value="#0000ff" required>
                     
                     <label for="panck-color">PanCK Color:</label>
-                    <input type="color" id="panck-color" name="panck-color" value="#0000ff" required>
+                    <input type="color" id="panck-color" name="panck-color" value="#ffff00" required>
 
                     <label for="cells-color">Other Cells:</label>
-                    <input type="color" id="cells-color" name="cells-color" value="#ff0000" required>
+                    <input type="color" id="cells-color" name="cells-color" value="#ff00ff" required>
                 </div>
                 <div class="upload-box" onclick="document.getElementById('images').click();">
                     <i class="fas fa-upload upload-icon"></i>
@@ -52,5 +52,6 @@
     <div id="footer-placeholder"></div>
     <script src="static/js/includeHeader.js"></script>
     <script src="static/js/script.js"></script>
+    <script src="static/js/results.js"></script> <!-- Include the results script -->
 </body>
 </html>

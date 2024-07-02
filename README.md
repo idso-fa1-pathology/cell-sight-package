@@ -115,7 +115,8 @@ This will start the container and run your application as defined in the Dockerf
    ```bash
     docker run -it --rm ghcr.io/idso-fa1-pathology/cell-sight-package:latest
 
-   docker run -p 5001:5001 -v /Users/yshokrollahi/Documents/GitHub/cell-sight-package/backend:/app/backend -v /Users/yshokrollahi/Documents/GitHub/cell-sight-package/frontend:/app/frontend cell-sight-package:latest
+docker run -p 5001:5001 -v /Users/yshokrollahi/Documents/GitHub/cell-sight-package/backend:/app/backend -v /Users/yshokrollahi/Documents/GitHub/cell-sight-package/frontend:/app/frontend cell-sight-package:latest
+
 
    ```
 

@@ -40,7 +40,8 @@ document.getElementById('predict-button').addEventListener('click', function() {
         if (data.error) {
             alert(`Error: ${data.error}`);
         } else {
-            // Assuming you want to redirect to the results page
+            // Store the results in local storage and redirect to the results page
+            localStorage.setItem('predictionResults', JSON.stringify(data.results));
             window.location.href = 'results.html';
         }
     })
