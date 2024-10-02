@@ -1,5 +1,5 @@
 
-# cell-detection-package
+# cell-sight-package
 
 #need to use better frontend
 
